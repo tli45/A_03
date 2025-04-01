@@ -7,6 +7,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+html, body {
+    margin: 0;
+    padding: 0;
+}
 
 body {
     font-family: 'Open Sans', sans-serif;
@@ -51,7 +55,6 @@ nav a.active {
 /* 通用 Hero 样式（所有页面） */
 header.hero {
     position: relative;
-    min-height: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,6 +62,7 @@ header.hero {
     overflow: hidden;
 }
 
+/* 公共 overlay 样式（所有页面） */
 header.hero .overlay {
     background-color: rgba(0, 0, 0, 0.6);
     padding: 40px;
@@ -75,9 +79,12 @@ header.hero .overlay {
     transform: translate(-50%, -50%);
 }
 
-/* 首页专属：仅当 body 带 .home 类时才应用背景图片，使用 contain 模式 */
+/* 首页专属：仅当 body 带 .home 类时，hero 区域全屏显示背景图片 */
 .home header.hero {
-    background: url('https://th.bing.com/th/id/OIP.be3MUxXcPUUage0sRMIpTgHaE8?pid=ImgDet&w=474&h=316&rs=1') center/contain no-repeat;
+    height: 100vh; /* 让 hero 区域充满整个视窗 */
+    background: url('https://th.bing.com/th/id/OIP.be3MUxXcPUUage0sRMIpTgHaE8?pid=ImgDet&w=474&h=316&rs=1')
+                center/cover no-repeat;
+    color: #fff;
 }
 
 /* Main Content */
@@ -182,9 +189,9 @@ footer {
         margin: 20px auto 0 auto;
     }
     
-    /* 可选：调整首页 hero 区域在小屏幕下的高度 */
+    /* 调整首页 hero 在小屏幕下的效果 */
     .home header.hero {
-        min-height: 300px;
+        height: auto;
         padding: 50px 0;
     }
 }
