@@ -88,7 +88,7 @@ header.hero .overlay {
 .home header.hero {
     /* 让首页 Hero 占满整个屏幕高度，并使用背景图 */
     height: 100vh;
-    background: url('https://th.bing.com/th/id/OIP.be3MUxXcPUUage0sRMIpTgHaE8?pid=ImgDet&w=474&h=316&rs=1')
+    background: url('https://www.pexels.com/zh-cn/photo/4929023/')
                 center/cover no-repeat;
     color: #fff;
 }
