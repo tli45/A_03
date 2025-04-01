@@ -17,8 +17,6 @@ body {
     background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
-    /* 添加淡入动画，1秒内从透明到完全显示 */
-    animation: fadeIn 1s forwards;
 }
 
 /* Navigation Bar */
@@ -67,7 +65,7 @@ header.hero {
     min-height: 350px;
 }
 
-/* 默认：非首页（无 .home）页面的 Hero 叠加层 */
+/* 默认：非首页（无 .home）页面的 Hero overlay */
 header.hero .overlay {
     background-color: rgba(255, 255, 255, 0.8);
     color: #333;
@@ -92,12 +90,15 @@ header.hero .overlay {
     color: #fff;
 }
 
+/* 首页 overlay：移除边框、添加淡入动画，仅对文本区域生效 */
 .home header.hero .overlay {
     background-color: rgba(0, 0, 0, 0.6);
     color: #fff;
     padding: 50px;
     max-width: 900px;
     width: 90%;
+    /* 1秒淡入动画 */
+    animation: fadeIn 1s forwards;
 }
 
 /* ----------------------------
@@ -219,7 +220,7 @@ footer {
 }
 
 /* ----------------------------
-   9. 淡入动画定义
+   9. 淡入动画定义（仅作用于 .overlay）
    ---------------------------- */
 @keyframes fadeIn {
     from { opacity: 0; }
