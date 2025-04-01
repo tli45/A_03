@@ -1,58 +1,59 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ollie Skate Project - Home</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* 示例样式，可根据图3的实际设计进行调整 */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #fff;
-      color: #333;
-    }
-    header {
-      background-color: #f0f0f0;
-      padding: 20px;
-      text-align: center;
-      border-bottom: 1px solid #ccc;
-    }
-    main {
-      padding: 20px;
-      min-height: calc(100vh - 140px); /* 预留页头和页脚高度 */
-    }
-    footer {
-      background-color: #ddd;
-      border-top: 1px solid #ccc;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-    footer a {
-      text-decoration: none;
-      color: #333;
-      font-size: 16px;
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>页面标题</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="active"><i class="fas fa-house"></i> Home</a></li>
+      <li><a href="mechanics.html"><i class="fas fa-cogs"></i> Mechanics</a></li>
+      <li><a href="tutorial.html"><i class="fas fa-chalkboard-teacher"></i> Tutorial</a></li>
+      <li><a href="skills.html"><i class="fas fa-arrow-up"></i> Skills</a></li>
+      <li><a href="extras.html"><i class="fas fa-star"></i> Extras</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="overlay">
+      <h1>Welcome to the Ollie Skate Project</h1>
+      <p>Discover the art and science behind the ollie.</p>
+    </div>
   </header>
+
   <main>
-    <!-- 这里放页面主要内容 -->
-    <p>这里是页面内容，可参考图3的排版样式进行布局调整。</p>
+    <section class="handdrawn">
+      <h2>About the Project</h2>
+      <p>
+        Explore the physics, techniques, and skills that make the ollie an iconic skateboarding move. Our project breaks down the mechanics and offers tutorials for skaters of all levels.
+      </p>
+    </section>
+
+    <section class="handdrawn">
+      <h2>Latest Topics</h2>
+      <p>
+        Stay updated with our latest articles and insights. Learn new tricks, improve your technique, and delve into the dynamics of skateboarding.
+      </p>
+    </section>
+
+    <section class="handdrawn">
+      <h2>Join the Community</h2>
+      <p>
+        Connect with fellow skaters, share your progress, and exchange tips. Follow us on social media and be part of a passionate community.
+      </p>
+    </section>
   </main>
+
   <footer>
-    <a href="home.html" id="backToHome">Back to Home</a>
-    <a href="#" id="nextTopic">Next Topic</a>
+    <p>&copy; 2025 Ollie Skate Project. All rights reserved.</p>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
+
 
