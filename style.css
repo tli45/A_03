@@ -8,12 +8,6 @@
     box-sizing: border-box;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-}
-
-
 body {
     font-family: 'Open Sans', sans-serif;
     background-color: #f4f4f4;
@@ -54,17 +48,12 @@ nav a.active {
     border-bottom: 2px solid #ff6600;
 }
 
-/* Hero Header with Background Image - 更新为使用 Bing 图片链接 */
-header.hero {
+/* Hero Header with Background Image - 仅限 Home 页面 */
+/* 注意：只有带有 .home 类的页面，其 header.hero 才会使用此背景 */
+.home header.hero {
     position: relative;
-    /* 让 Hero 高度占据整屏 */
-    min-height: 100vh;
-    /* 如果你想固定死就用 height: 100vh; 也可以 */
-    
-    /* 背景图片：使用cover确保左右和上下都能填充 */
-    background: url('https://th.bing.com/th/id/OIP.be3MUxXcPUUage0sRMIpTgHaE8?pid=ImgDet&w=474&h=316&rs=1')
-                center/cover no-repeat;
-    
+    height: 70vh; /* 可根据需要调整高度 */
+    background: url('https://th.bing.com/th/id/OIP.be3MUxXcPUUage0sRMIpTgHaE8?pid=ImgDet&w=474&h=316&rs=1') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -73,18 +62,16 @@ header.hero {
     overflow: hidden;
 }
 
-header.hero .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5);
-    /* 其余布局和文字居中设置 */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.home header.hero .overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    text-align: center;
+    color: white;
+    border: 5px solid #fff;
+    outline: 4px dashed black;
+    outline-offset: -10px;
+    max-width: 90%;
+    border-radius: 12px;
 }
 
 /* Main Content */
@@ -189,7 +176,8 @@ footer {
         margin: 20px auto 0 auto;
     }
     
-    header.hero {
+    /* 可选：调整 Home 页面 hero 区域在小屏幕下的高度 */
+    .home header.hero {
         height: auto;
         padding: 50px 0;
     }
