@@ -1,27 +1,58 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <title>滑板 Ollie 动作演示</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* 示例样式，可根据图3的实际设计进行调整 */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+    header {
+      background-color: #f0f0f0;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid #ccc;
+    }
+    main {
+      padding: 20px;
+      min-height: calc(100vh - 140px); /* 预留页头和页脚高度 */
+    }
+    footer {
+      background-color: #ddd;
+      border-top: 1px solid #ccc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    footer a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>滑板 Ollie 动作演示</h1>
-    <nav>
-      <a href="tutorial.html">教学</a>
-      <a href="mechanics.html">原理</a>
-      <a href="skills.html">技巧</a>
-      <a href="extras.html">其他</a>
-    </nav>
+    <h1>页面标题</h1>
   </header>
-
   <main>
-    <h2>欢迎</h2>
-    <p>了解滑板 Ollie 动作的基本过程和物理原理。</p>
-    <img src="image/ollie-diagram1.png" alt="Ollie 分解图" />
+    <!-- 这里放页面主要内容 -->
+    <p>这里是页面内容，可参考图3的排版样式进行布局调整。</p>
   </main>
-
+  <footer>
+    <a href="home.html" id="backToHome">Back to Home</a>
+    <a href="#" id="nextTopic">Next Topic</a>
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>
+
