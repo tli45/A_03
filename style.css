@@ -52,7 +52,9 @@ nav a.active {
     border-bottom: 2px solid #ff6600;
 }
 
-/* 通用 Hero 样式（所有页面） */
+/* ----------------------------
+   1. 通用 Hero 样式（所有页面）
+   ---------------------------- */
 header.hero {
     position: relative;
     display: flex;
@@ -60,34 +62,48 @@ header.hero {
     justify-content: center;
     text-align: center;
     overflow: hidden;
+    min-height: 350px; /* 若想首页外页面也很高，可改成更大值 */
 }
 
-/* 公共 overlay 样式（所有页面） */
+/* 默认：非首页（无 .home）页面的 Hero 叠加层
+   - 浅色背景 + 深色文字 */
 header.hero .overlay {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 40px;
-    text-align: center;
-    color: white;
-    border: 5px solid #fff;
-    outline: 4px dashed black;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    border: 5px solid #333;
+    outline: 4px dashed #333;
     outline-offset: -10px;
     max-width: 90%;
     border-radius: 12px;
+    padding: 40px;
+    text-align: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-/* 首页专属：仅当 body 带 .home 类时，hero 区域全屏显示背景图片 */
+/* ----------------------------
+   2. 首页专属样式（.home）
+   ---------------------------- */
 .home header.hero {
-    height: 100vh; /* 让 hero 区域充满整个视窗 */
+    /* 让首页 Hero 占满整个屏幕高度 */
+    height: 100vh;
     background: url('https://th.bing.com/th/id/OIP.be3MUxXcPUUage0sRMIpTgHaE8?pid=ImgDet&w=474&h=316&rs=1')
                 center/cover no-repeat;
-    color: #fff;
 }
 
-/* Main Content */
+/* 覆盖首页叠加层：深色背景 + 白色文字 */
+.home header.hero .overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: 5px solid #fff;
+    outline: 4px dashed black;
+}
+
+/* ----------------------------
+   3. 主体内容
+   ---------------------------- */
 main {
     max-width: 1000px;
     margin: 50px auto;
@@ -181,7 +197,9 @@ footer {
     margin-top: 50px;
 }
 
-/* Responsive tweak */
+/* ----------------------------
+   4. 响应式调整
+   ---------------------------- */
 @media (max-width: 768px) {
     .sticker {
         position: static;
@@ -189,7 +207,7 @@ footer {
         margin: 20px auto 0 auto;
     }
     
-    /* 调整首页 hero 在小屏幕下的效果 */
+    /* 小屏幕下，首页 hero 可以不占满整屏，避免太高 */
     .home header.hero {
         height: auto;
         padding: 50px 0;
