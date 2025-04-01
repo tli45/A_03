@@ -66,11 +66,10 @@ header.hero {
 }
 
 /* 默认：非首页（无 .home）页面的 Hero 叠加层
-   - 使用浅色背景与深色文字，已移除边框 */
+   使用浅色背景与深色文字，边框已全部移除 */
 header.hero .overlay {
     background-color: rgba(255, 255, 255, 0.8);
     color: #333;
-    /* border: 5px solid #333;  已移除 */
     border-radius: 12px;
     padding: 50px;                  /* 让可写区域更大 */
     text-align: center;
@@ -88,7 +87,7 @@ header.hero .overlay {
 .home header.hero {
     /* 让首页 Hero 占满整个屏幕高度，并使用背景图 */
     height: 100vh;
-    background: url('https://www.pexels.com/zh-cn/photo/4929023/')
+    background: url('https://th.bing.com/th/id/OIP.be3MUxXcPUUage0sRMIpTgHaE8?pid=ImgDet&w=474&h=316&rs=1')
                 center/cover no-repeat;
     color: #fff;
 }
@@ -96,7 +95,6 @@ header.hero .overlay {
 /* 首页 overlay 移除边框 */
 .home header.hero .overlay {
     background-color: rgba(0, 0, 0, 0.6);
-    /* border: 5px solid #fff;  已移除 */
     color: #fff;
     padding: 50px;
     max-width: 900px;
@@ -139,8 +137,6 @@ section li {
 /* Handdrawn style sections */
 .handdrawn {
     border: 3px solid black;
-    /* outline: 4px dashed #333;  已移除 */
-    /* outline-offset: -8px;       已移除 */
     background: #fff url('images/skate-texture.png') repeat;
     background-blend-mode: lighten;
     position: relative;
@@ -149,21 +145,90 @@ section li {
     max-width: 800px;
 }
 
-/* Images & Videos*
-/* 定义淡出动画：从完全不透明到完全透明 */
+/* ----------------------------
+   4. Images & Videos
+   ---------------------------- */
+img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ----------------------------
+   5. Sticker style
+   ---------------------------- */
+.sticker {
+    width: 120px;
+    position: absolute;
+    right: -30px;
+    top: -30px;
+    transform: rotate(-10deg);
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.sticker:hover {
+    transform: rotate(0deg) scale(1.1);
+}
+
+/* ----------------------------
+   6. Footer
+   ---------------------------- */
+footer {
+    background-color: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 25px;
+    font-size: 0.9em;
+    margin-top: 50px;
+}
+
+/* ----------------------------
+   7. 响应式调整
+   ---------------------------- */
+@media (max-width: 768px) {
+    .sticker {
+        position: static;
+        display: block;
+        margin: 20px auto 0 auto;
+    }
+    
+    /* 小屏幕下，首页 hero 可以不占满整屏，避免太高 */
+    .home header.hero {
+        height: auto;
+        padding: 50px 0;
+    }
+}
+
+/* ----------------------------
+   8. 整页淡出动画效果
+   ---------------------------- */
+/* 定义淡出动画 */
 @keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
+    from { opacity: 1; }
+    to { opacity: 0; }
 }
 
-/* 给需要淡出效果的元素添加类 .fade-out */
-.fade-out {
-  /* 延迟1秒开始动画，动画持续3秒，forwards 保持结束状态 */
-  animation: fadeOut 3s forwards;
-  animation-delay: 1s;
+/* 应用于整个页面：延迟2秒后开始5秒淡出，动画结束后保持透明 */
+body {
+    animation: fadeOut 5s forwards;
+    animation-delay: 2s;
 }
-
