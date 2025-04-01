@@ -1,5 +1,5 @@
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap');
+@import url('https://th.bing.com/th/id/OIP.be3MUxXcPUUage0sRMIpTgHaE8?pid=ImgDet&w=474&h=316&rs=1');
 
 /* Reset & Base */
 * {
@@ -159,7 +159,6 @@ footer {
     font-size: 0.9em;
     margin-top: 50px;
 }
-/* 英文注释仅供参考，可根据项目风格自行调整 */
 
 .hero {
   position: relative;         /* 确保能够放置 overlay */
