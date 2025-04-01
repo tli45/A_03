@@ -150,4 +150,20 @@ section li {
 }
 
 /* Images & Videos*
+/* 定义淡出动画：从完全不透明到完全透明 */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* 给需要淡出效果的元素添加类 .fade-out */
+.fade-out {
+  /* 延迟1秒开始动画，动画持续3秒，forwards 保持结束状态 */
+  animation: fadeOut 3s forwards;
+  animation-delay: 1s;
+}
 
