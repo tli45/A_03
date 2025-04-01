@@ -159,6 +159,53 @@ footer {
     font-size: 0.9em;
     margin-top: 50px;
 }
+/* 英文注释仅供参考，可根据项目风格自行调整 */
+
+.hero {
+  position: relative;         /* 确保能够放置 overlay */
+  height: 70vh;               /* 让头部占据屏幕70%高度，可自行调整 */
+  background: no-repeat center center/cover;
+  /* 将背景图设为自动覆盖，并确保居中显示 */
+  background-image: url("images/skate-hero.jpg"); 
+  /* 如果你想用 filter 调节亮度，也可以写在这里：
+     filter: brightness(0.6);
+     但这样会影响内部文字，建议使用 overlay 叠加层
+  */
+  display: flex;              /* 让 hero 内部子元素可灵活布局 */
+  align-items: center;        /* 垂直居中 */
+  justify-content: center;    /* 水平居中 */
+  text-align: center;
+  color: #fff;                /* 文字颜色为白色，以便在暗背景上清晰可见 */
+  overflow: hidden;           /* 处理超出部分 */
+}
+
+.hero .overlay {
+  position: absolute;         /* 叠加层定位 */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); 
+  /* 半透明黑色叠加层，可根据需要调节透明度(0~1) */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .overlay h1,
+.hero .overlay p {
+  margin: 10px 0;
+  z-index: 1;                 /* 确保文字在叠加层之上 */
+}
+
+/* 其他常规样式，比如手绘边框的效果、导航栏等，可根据你原先的项目保持一致 */
+.handdrawn {
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  /* 这里是示例 */
+}
 
 /* Responsive tweak */
 @media (max-width: 768px) {
