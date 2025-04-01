@@ -48,12 +48,10 @@ nav a.active {
     border-bottom: 2px solid #ff6600;
 }
 
-/* Hero Header with Background Image - 仅限 Home 页面 */
-/* 注意：只有带有 .home 类的页面，其 header.hero 才会使用此背景 */
-/* 1. 通用 hero 样式（所有页面的 Hero 都有同样的布局、虚线框等） */
+/* 通用 Hero 样式（所有页面） */
 header.hero {
     position: relative;
-    min-height: 350px; /* 或者 70vh / 100vh，看你需要 */
+    min-height: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,31 +59,25 @@ header.hero {
     overflow: hidden;
 }
 
-/* 2. 通用的 overlay 样式（让所有页面都能看到同样的边框和叠加层效果） */
 header.hero .overlay {
     background-color: rgba(0, 0, 0, 0.6);
     padding: 40px;
     text-align: center;
-    color: white; /* 如果其他页面想用黑字，可以改成 #333 */
+    color: white;
     border: 5px solid #fff;
     outline: 4px dashed black;
     outline-offset: -10px;
     max-width: 90%;
     border-radius: 12px;
-    /* 让 overlay 能够在 hero 中居中显示 */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-/* 3. 首页专属：只有在 body 上有 .home 类时才加载背景图片 */
-/* 这样就不会影响其他页面 */
+/* 首页专属：仅当 body 带 .home 类时才应用背景图片，使用 contain 模式 */
 .home header.hero {
-    /* 只在首页使用背景图 */
-    background: url('https://th.bing.com/th/id/OIP.be3MUxXcPUUage0sRMIpTgHaE8?pid=ImgDet&w=474&h=316&rs=1') 
-                center/cover no-repeat;
-    color: #fff;
+    background: url('https://th.bing.com/th/id/OIP.be3MUxXcPUUage0sRMIpTgHaE8?pid=ImgDet&w=474&h=316&rs=1') center/contain no-repeat;
 }
 
 /* Main Content */
@@ -190,9 +182,9 @@ footer {
         margin: 20px auto 0 auto;
     }
     
-    /* 可选：调整 Home 页面 hero 区域在小屏幕下的高度 */
+    /* 可选：调整首页 hero 区域在小屏幕下的高度 */
     .home header.hero {
-        height: auto;
+        min-height: 300px;
         padding: 50px 0;
     }
 }
